@@ -15,9 +15,13 @@ public class ATMService {
 
     public boolean login(String cardNumber, int pin) {
        logout();
-       return bank.findAccount(cardNumber).filter(account ->  account.getPinCode() == pin)
-               .map(account -> {currentAccount = account;
-       return true;}).orElse(false);
+        return bank.findAccount(cardNumber)
+                .filter(account -> account.validatePin(pin))
+                .map(account -> {
+                    currentAccount = account;
+                    return true;
+                })
+                .orElse(false);
     }
 
     public void logout() {
