@@ -2,14 +2,17 @@ package models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @AllArgsConstructor
-@Data
+
 public class Account {
+    @Getter
     private String accountNumber;
     private int pinCode;
+    @Getter
     private BigDecimal balance;
 
     public void depositMoney(BigDecimal amount) {
@@ -26,6 +29,9 @@ public class Account {
             return true;
         }
         return false;
+    }
+    public boolean validatePin(int pin) {
+        return this.pinCode == pin;
     }
 }
 

@@ -1,4 +1,8 @@
 # 🏧 ATM Simulator - Main Branch
+=======
+# 🏧 ATM Simulator - Dev Branch
+
+Development version merged into main.
 
 A simple console-based ATM simulator written in Java. The application allows users to authenticate using a card number and PIN, check their balance, deposit money, withdraw funds, and log out.
 
@@ -34,7 +38,7 @@ src
     └── java
         ├── homework
         │   └── Main.java
-        ├── Service
+        ├── service
         │   ├── ATMService.java
         │   └── MenuService.java
         └── models
@@ -199,7 +203,7 @@ This project demonstrates:
 * Object-Oriented Programming (OOP)
 * Encapsulation
 * Separation of concerns
-* Service layer implementation
+* service layer implementation
 * Simple application architecture
 * Working with collections
 * Console interaction
