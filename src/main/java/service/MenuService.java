@@ -2,6 +2,7 @@ package service;
 
 import models.Account;
 import models.Bank;
+import utils.InputUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -23,10 +24,10 @@ public class MenuService {
     public void startApp() throws IOException{
         System.out.println("=== Welcome to ATM ===");
         System.out.println("=== Enter your card number ===");
-        String cardNumber = reader.readLine();
+        String cardNumber = InputUtils.readString();
         System.out.println(cardNumber);
         System.out.println("=== Enter your PIN code ===");
-        int pin = Integer.parseInt(reader.readLine());
+        int pin = InputUtils.readInt();
         System.out.println(pin);
 
         Optional<Account> account = bank.findAccount(cardNumber);
@@ -48,14 +49,14 @@ public class MenuService {
             System.out.println("3. Withdraw money");
             System.out.println("4. Logout");
 
-            int userChoice = Integer.parseInt(reader.readLine());
+            int userChoice = InputUtils.readInt();
             switch (userChoice) {
                 case 1:
                     System.out.println("Your card balance: " + atmService.getUserBalance());
                     break;
                 case 2:
                     System.out.println("Enter amount of deposit");
-                    BigDecimal depositAmount = new BigDecimal(reader.readLine());
+                    BigDecimal depositAmount = InputUtils.readBigDecimal();
                     if(atmService.depositMoney(depositAmount)) {
                         System.out.println("Your balance successfully deposited");
                     } else {
@@ -64,7 +65,7 @@ public class MenuService {
                     break;
                 case 3:
                     System.out.println("Enter withdrawal amount");
-                    BigDecimal withdrawalAmount = new BigDecimal(reader.readLine());
+                    BigDecimal withdrawalAmount = InputUtils.readBigDecimal();
                     if(atmService.withdrawMoney(withdrawalAmount)) {
                         System.out.println("Please take your money");
                     } else {
