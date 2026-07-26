@@ -23,12 +23,9 @@ public class Bank {
     }
 
     public Optional<Account> findAccount(String accountNumber) {
-        for (Account account : accounts) {
-            if (account.getAccountNumber().equals(accountNumber)) {
-                return Optional.of(account);
-            }
-        }
-        return Optional.empty();
+        return accounts.stream()
+                .filter(account -> account.getAccountNumber().equals(accountNumber))
+                .findFirst();
     }
 }
 
