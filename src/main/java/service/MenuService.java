@@ -1,4 +1,4 @@
-package Service;
+package service;
 
 import models.Account;
 import models.Bank;
@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Optional;
-import java.util.Scanner;
 
 public class MenuService {
     private ATMService atmService;

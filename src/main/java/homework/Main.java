@@ -1,7 +1,7 @@
 package homework;
 
-import Service.ATMService;
-import Service.MenuService;
+import service.ATMService;
+import service.MenuService;
 import models.Bank;
 
 import java.io.IOException;

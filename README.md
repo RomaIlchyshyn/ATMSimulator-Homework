@@ -34,7 +34,7 @@ src
     └── java
         ├── homework
         │   └── Main.java
-        ├── Service
+        ├── service
         │   ├── ATMService.java
         │   └── MenuService.java
         └── models
@@ -199,7 +199,7 @@ This project demonstrates:
 * Object-Oriented Programming (OOP)
 * Encapsulation
 * Separation of concerns
-* Service layer implementation
+* service layer implementation
 * Simple application architecture
 * Working with collections
 * Console interaction
