@@ -3,6 +3,9 @@ package Service;
 import models.Account;
 import models.Bank;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.Scanner;
@@ -10,21 +13,21 @@ import java.util.Scanner;
 public class MenuService {
     private ATMService atmService;
     private Bank bank;
-    private Scanner scanner;
+    private final BufferedReader reader;
 
     public MenuService(ATMService atmService, Bank bank) {
         this.atmService = atmService;
         this.bank = bank;
-        this.scanner = new Scanner(System.in);
+        this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public void startApp() {
+    public void startApp() throws IOException{
         System.out.println("=== Welcome to ATM ===");
         System.out.println("=== Enter your card number ===");
-        String cardNumber = scanner.nextLine();
+        String cardNumber = reader.readLine();
         System.out.println(cardNumber);
         System.out.println("=== Enter your PIN code ===");
-        int pin = scanner.nextInt();
+        int pin = Integer.parseInt(reader.readLine());
         System.out.println(pin);
 
         Optional<Account> account = bank.findAccount(cardNumber);
@@ -37,7 +40,7 @@ public class MenuService {
         }
 
     }
-    private void mainMenu() {
+    private void mainMenu() throws IOException{
         boolean serviceOn = true;
         while (serviceOn) {
             System.out.println(" MAIN MENU ");
@@ -46,14 +49,14 @@ public class MenuService {
             System.out.println("3. Withdraw money");
             System.out.println("4. Logout");
 
-            int userChoice = scanner.nextInt();
+            int userChoice = Integer.parseInt(reader.readLine());
             switch (userChoice) {
                 case 1:
                     System.out.println("Your card balance: " + atmService.getUserBalance());
                     break;
                 case 2:
                     System.out.println("Enter amount of deposit");
-                    BigDecimal depositAmount = scanner.nextBigDecimal();
+                    BigDecimal depositAmount = new BigDecimal(reader.readLine());
                     if(atmService.depositMoney(depositAmount)) {
                         System.out.println("Your balance successfully deposited");
                     } else {
@@ -62,7 +65,7 @@ public class MenuService {
                     break;
                 case 3:
                     System.out.println("Enter withdrawal amount");
-                    BigDecimal withdrawalAmount = scanner.nextBigDecimal();
+                    BigDecimal withdrawalAmount = new BigDecimal(reader.readLine());
                     if(atmService.withdrawMoney(withdrawalAmount)) {
                         System.out.println("Please take your money");
                     } else {
@@ -80,7 +83,7 @@ public class MenuService {
 
 
         }
-        scanner.close();
+        reader.close();
     }
 
 }
