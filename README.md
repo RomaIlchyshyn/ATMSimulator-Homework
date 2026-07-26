@@ -1,4 +1,4 @@
-# 🏧 ATM Simulator
+# 🏧 ATM Simulator - Dev Branch
 
 A simple console-based ATM simulator written in Java. The application allows users to authenticate using a card number and PIN, check their balance, deposit money, withdraw funds, and log out.
 
