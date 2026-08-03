@@ -10,13 +10,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
     compileOnly 'org.projectlombok:lombok:1.18.46'
     annotationProcessor 'org.projectlombok:lombok:1.18.46'
+    testImplementation 'org.testng:testng:7.11.0'
+    testImplementation 'org.assertj:assertj-core:3.27.7'
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG()
 }
