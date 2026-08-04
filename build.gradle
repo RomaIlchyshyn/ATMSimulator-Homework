@@ -16,6 +16,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.46'
     testImplementation 'org.testng:testng:7.11.0'
     testImplementation 'org.assertj:assertj-core:3.27.7'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
 }
 
 test {
