@@ -1,5 +1,6 @@
 package base;
 
+import models.Account;
 import models.Bank;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,6 +9,7 @@ import service.ATMService;
 public class BaseTest {
     protected ATMService atmService;
     protected Bank bank;
+    protected Account account;
 
     @BeforeMethod
     public void setup() {
