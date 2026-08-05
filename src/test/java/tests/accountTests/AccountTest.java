@@ -21,14 +21,14 @@ public class AccountTest {
     @Test
     public void shouldDepositMoney() {
         account.depositMoney(new BigDecimal("200"));
-        assertThat(account.getBalance())
+        assertThat(account.getBalance()).as("Successful deposit")
                 .isEqualByComparingTo("1200");
     }
     @Test
     public void shouldWithdrawMoney() {
         boolean result = account.withdrawMoney(new BigDecimal("300"));
         assertThat(result).isTrue();
-        assertThat(account.getBalance())
+        assertThat(account.getBalance()).as("Successful withdraw money")
                 .isEqualByComparingTo("700");
     }
     @Test

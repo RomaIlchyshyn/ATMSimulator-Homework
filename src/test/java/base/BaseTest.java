@@ -11,7 +11,6 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        System.out.println("completed");
         bank = new Bank();
         atmService = new ATMService(bank);
     }
