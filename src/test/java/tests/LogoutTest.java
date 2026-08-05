@@ -1,17 +1,20 @@
 package tests;
 
 import base.BaseTest;
-import helpers.SuccessfulLogin;
+import helpers.LoginHelper;
+import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+
 public class LogoutTest extends BaseTest {
-    SuccessfulLogin login = new SuccessfulLogin();
+    SoftAssertions softly = new SoftAssertions();
+
     @Test(groups = "logout")
-    public void logoutTest() {
-        login.successfulLogin(atmService);
+    public void shouldLogoutUser() {
+        LoginHelper.successfulLogin(atmService);
         atmService.logout();
-        assertThat(account).isNull();
+        softly.assertThat(bank.getAccounts()).isNull();
     }
 }

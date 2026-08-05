@@ -8,8 +8,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class LoginWithInvalidCardTest extends BaseTest {
     @Test(groups = "login")
-    public void loginWithInvalidCard() {
-        boolean result = atmService.login(TestData.generateRandomCard(), 2341);
-        assertThat(result).isEqualTo(false);
+    public void shouldNotLoginWithInvalidCard() {
+        boolean result = atmService.login(TestData.INVALID_CARD, TestData.FIRST_CARD_VALID_PIN);
+        assertThat(result).isFalse();
     }
 }

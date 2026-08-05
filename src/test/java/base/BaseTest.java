@@ -1,24 +1,25 @@
 package base;
 
-import models.Account;
 import models.Bank;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import service.ATMService;
 
-public class BaseTest {
+public abstract class BaseTest {
     protected ATMService atmService;
     protected Bank bank;
-    protected Account account;
 
     @BeforeMethod
     public void setup() {
+        System.out.println("completed");
         bank = new Bank();
         atmService = new ATMService(bank);
     }
 
-    @AfterMethod
-    public void finishTests() {
-        atmService.logout();
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (atmService != null) {
+            atmService.logout();
+        }
     }
 }

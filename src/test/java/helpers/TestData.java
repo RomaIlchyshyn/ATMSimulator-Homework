@@ -1,34 +1,25 @@
 package helpers;
 
-import base.BaseTest;
-import com.github.javafaker.Faker;
-import service.ATMService;
-
 import java.math.BigDecimal;
 
-public class TestData extends BaseTest {
-    public static BigDecimal amount(int amount) {
-        return BigDecimal.valueOf(amount);
-    }
+public class TestData {
 
-    public static BigDecimal amount(double amount) {
-        return BigDecimal.valueOf(amount);
-    }
+    private TestData() {
 
-    static Faker faker = new Faker();
+    }
+    public static final String FIRST_VALID_CARD = "4512";
+    public static final int FIRST_CARD_VALID_PIN = 1234;
+    public static final String SECOND_VALID_CARD = "1111";
+    public static final int SECOND_CARD_VALID_PIN = 1111;
+    public static final String THIRD_VALID_CARD = "9999";
+    public static final int THIRD_CARD_VALID_PIN = 7777;
 
-    public static String generateRandomCard() {
-        return faker.finance().creditCard();
-    }
+    public static final String INVALID_CARD = "9999";
+    public static final int INVALID_PIN = 1111;
 
-    public static int generateRandomPinCode() {
-        return Integer.parseInt(faker.numerify("####"));
-    }
-
-    public static BigDecimal generateRandomWithdrawAmount(ATMService service) {
-        return BigDecimal.valueOf(faker.number().randomDouble(2, 0, service.getUserBalance().longValue()));
-    }
-    public static int generateRandomPositiveDepositAmount(ATMService service) {
-        return (int) faker.number().randomNumber();
-    }
+    public static final BigDecimal SMALL_AMOUNT = BigDecimal.ONE;
+    public static final BigDecimal NORMAL_AMOUNT = BigDecimal.valueOf(100);
+    public static final BigDecimal LARGE_AMOUNT = BigDecimal.valueOf(500000);
+    public static final BigDecimal NEGATIVE_AMOUNT = BigDecimal.valueOf(-100);
+    public static final BigDecimal ZERO_AMOUNT = BigDecimal.ZERO;
 }

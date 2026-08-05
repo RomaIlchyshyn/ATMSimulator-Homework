@@ -8,9 +8,9 @@ public class DepositAmountProvider extends BaseTest {
     @DataProvider(name = "depositAmounts")
     public Object[][] amounts() {
         return new Object[][]{
-                {TestData.generateRandomPositiveDepositAmount(atmService)},
-                {TestData.generateRandomPositiveDepositAmount(atmService)},
-                {TestData.generateRandomPositiveDepositAmount(atmService)}
+                {TestData.SMALL_AMOUNT},
+                {TestData.NORMAL_AMOUNT},
+                {TestData.LARGE_AMOUNT}
         };
     }
 }

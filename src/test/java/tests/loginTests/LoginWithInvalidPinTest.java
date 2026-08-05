@@ -8,9 +8,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class LoginWithInvalidPinTest extends BaseTest {
     @Test(groups = "login")
-    public void loginWithInvalidTest() {
-        boolean result = atmService.login("4512", TestData.generateRandomPinCode());
-        assertThat(result).isEqualTo(false);
+    public void shouldNotLoginWithInvalidPin() {
+        boolean result = atmService.login(TestData.FIRST_VALID_CARD, TestData.INVALID_PIN);
+        assertThat(result).isFalse();
     }
 
 }

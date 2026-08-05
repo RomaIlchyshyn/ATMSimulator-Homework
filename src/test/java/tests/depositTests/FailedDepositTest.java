@@ -1,18 +1,17 @@
 package tests.depositTests;
 
 import base.BaseTest;
-import helpers.SuccessfulLogin;
+import helpers.LoginHelper;
 import helpers.TestData;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class FailedDepositTest extends BaseTest {
-    SuccessfulLogin login = new SuccessfulLogin();
     @Test(groups = "deposit")
-    public void depositWithNegativeAmount() {
-        login.successfulLogin(atmService);
-        boolean result = atmService.depositMoney(TestData.amount(-100));
+    public void shouldNotIncreaseBalanceWithNegativeAmount() {
+        LoginHelper.successfulLogin(atmService);
+        boolean result = atmService.depositMoney(TestData.NEGATIVE_AMOUNT);
         assertThat(result).isFalse();
     }
 }

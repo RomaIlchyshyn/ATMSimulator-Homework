@@ -1,14 +1,15 @@
 package dataProviders;
 
+import helpers.TestData;
 import org.testng.annotations.DataProvider;
 
 public class LoginDataProvider {
     @DataProvider(name = "credentials")
     public static Object[][] userCredentials() {
         return new Object[][] {
-                {"4512", 1234},
-                {"1111", 1111},
-                {"9999", 7777}
+                {TestData.FIRST_VALID_CARD, TestData.FIRST_CARD_VALID_PIN},
+                {TestData.SECOND_VALID_CARD, TestData.SECOND_CARD_VALID_PIN},
+                {TestData.THIRD_VALID_CARD, TestData.THIRD_CARD_VALID_PIN}
         };
     }
 }

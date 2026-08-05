@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="ATM Suite">
+
+    <test name="Login Tests">
+        <groups>
+            <run>
+                <include name="login"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.loginTests"/>
+        </packages>
+    </test>
+
+    <test name="Deposit Tests">
+        <groups>
+            <run>
+                <include name="deposit"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.depositTests"/>
+        </packages>
+    </test>
+
+    <test name="Withdrawal Tests">
+        <groups>
+            <run>
+                <include name="withdrawal"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.withdrawalTests"/>
+        </packages>
+    </test>
+
+    <test name="Common Tests">
+        <groups>
+            <run>
+                <include name="logout"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+
+</suite>
