@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="ATM Suite">
+<suite name="ATM Simulator Suite">
 
     <test name="Login Tests">
         <groups>
@@ -25,6 +25,17 @@
             <package name="tests.deposittests"/>
         </packages>
     </test>
+    <test name="Account Tests">
+        <groups>
+            <run>
+                <include name="account"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.accounttests"/>
+        </packages>
+    </test>
 
     <test name="Withdrawal Tests">
         <groups>
@@ -38,15 +49,15 @@
         </packages>
     </test>
 
-    <test name="Common Tests">
+    <test name="Session Tests">
         <groups>
             <run>
-                <include name="logout"/>
+                <include name="session"/>
             </run>
         </groups>
 
         <packages>
-            <package name="tests"/>
+            <package name="tests.sessiontest"/>
         </packages>
     </test>
 

@@ -14,13 +14,20 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.46'
     annotationProcessor 'org.projectlombok:lombok:1.18.46'
-    testImplementation 'org.testng:testng:7.10.2'
+    testImplementation 'org.testng:testng:7.11.0'
     testImplementation 'org.assertj:assertj-core:3.27.7'
 }
 
 test {
-    useTestNG()
-    systemProperty "groups", System.getProperty("groups")
+    useTestNG() {
+        if (System.getProperty("groups")) {
+            println "Running group: ${System.getProperty("groups")}"
+            includeGroups System.getProperty("groups")
+        }
+    }
+    beforeTest { descriptor ->
+        println "Running: ${descriptor.className}.${descriptor.name}"
+    }
 
     testLogging {
         events "passed", "failed", "skipped"

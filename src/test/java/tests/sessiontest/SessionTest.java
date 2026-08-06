@@ -1,4 +1,4 @@
-package sessiontest;
+package tests.sessiontest;
 
 import base.BaseTest;
 import helpers.TestData;
@@ -7,20 +7,20 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class SessionTest extends BaseTest {
 
-    @Test(groups = "session")
+    @Test(groups = {"session"})
     public void shouldNotGetBalanceWithoutLogin() {
 
         assertThatThrownBy(() -> atmService.getUserBalance())
                 .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
-    @Test(groups = "session")
+    @Test(groups = {"session"})
     public void shouldNotDepositWithoutLogin() {
 
         assertThatThrownBy(() ->
                 atmService.depositMoney(TestData.NORMAL_AMOUNT))
                 .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
-    @Test(groups = "session")
+    @Test(groups = {"session"})
     public void shouldNotWithdrawWithoutLogin() {
 
         assertThatThrownBy(() ->

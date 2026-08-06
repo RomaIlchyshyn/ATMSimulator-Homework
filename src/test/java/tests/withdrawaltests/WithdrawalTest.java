@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class WithdrawalTest extends BaseTest {
-    @Test(dataProvider = "withdrawAmount", dataProviderClass = WithdrawAmountProvider.class)
+    @Test(groups = {"withdrawal"}, dataProvider = "withdrawAmount", dataProviderClass = WithdrawAmountProvider.class)
     public void withdrawTest(BigDecimal amount, boolean expected) {
         LoginHelper.successfulLogin(atmService);
         BigDecimal balanceBefore = atmService.getUserBalance();

@@ -9,7 +9,7 @@ public abstract class BaseTest {
     protected ATMService atmService;
     protected Bank bank;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() {
         bank = new Bank();
         atmService = new ATMService(bank);
