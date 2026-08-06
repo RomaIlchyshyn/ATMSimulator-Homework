@@ -1,7 +1,7 @@
-package tests.depositTests;
+package tests.deposittests;
 
 import base.BaseTest;
-import dataProviders.DepositAmountProvider;
+import dataproviders.DepositAmountProvider;
 import helpers.LoginHelper;
 import org.testng.annotations.Test;
 

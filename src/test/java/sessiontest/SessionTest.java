@@ -1,4 +1,4 @@
-package sessionTest;
+package sessiontest;
 
 import base.BaseTest;
 import helpers.TestData;
@@ -11,21 +11,21 @@ public class SessionTest extends BaseTest {
     public void shouldNotGetBalanceWithoutLogin() {
 
         assertThatThrownBy(() -> atmService.getUserBalance())
-                .isInstanceOf(NullPointerException.class);
+                .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
     @Test(groups = "session")
     public void shouldNotDepositWithoutLogin() {
 
         assertThatThrownBy(() ->
                 atmService.depositMoney(TestData.NORMAL_AMOUNT))
-                .isInstanceOf(NullPointerException.class);
+                .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
     @Test(groups = "session")
     public void shouldNotWithdrawWithoutLogin() {
 
         assertThatThrownBy(() ->
                 atmService.withdrawMoney(TestData.NORMAL_AMOUNT))
-                .isInstanceOf(NullPointerException.class);
+                .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
 
 }

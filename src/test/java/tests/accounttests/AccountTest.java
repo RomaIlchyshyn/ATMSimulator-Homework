@@ -1,4 +1,4 @@
-package tests.accountTests;
+package tests.accounttests;
 
 import helpers.TestData;
 import models.Account;

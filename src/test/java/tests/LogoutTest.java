@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import helpers.LoginHelper;
+import helpers.TestData;
 import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
@@ -15,6 +16,6 @@ public class LogoutTest extends BaseTest {
         LoginHelper.successfulLogin(atmService);
         atmService.logout();
         assertThatThrownBy(() -> atmService.depositMoney(BigDecimal.TEN))
-                .isInstanceOf(NullPointerException.class);
+                .isInstanceOf(IllegalStateException.class).hasMessage(TestData.ERROR_MESSAGE);
     }
 }

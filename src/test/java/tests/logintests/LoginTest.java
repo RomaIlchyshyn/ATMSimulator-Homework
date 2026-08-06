@@ -1,7 +1,7 @@
-package tests.loginTests;
+package tests.logintests;
 
 import base.BaseTest;
-import dataProviders.LoginDataProvider;
+import dataproviders.LoginDataProvider;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

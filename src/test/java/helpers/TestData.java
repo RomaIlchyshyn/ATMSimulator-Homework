@@ -22,4 +22,5 @@ public class TestData {
     public static final BigDecimal LARGE_AMOUNT = BigDecimal.valueOf(500000);
     public static final BigDecimal NEGATIVE_AMOUNT = BigDecimal.valueOf(-100);
     public static final BigDecimal ZERO_AMOUNT = BigDecimal.ZERO;
+    public static final String ERROR_MESSAGE = "User not authorized";
 }

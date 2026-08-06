@@ -1,20 +1,13 @@
-package tests.bankTest;
+package tests.banktest;
 
 import base.BaseTest;
 import helpers.TestData;
-import models.Bank;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class BankTest extends BaseTest{
-    private Bank bank;
 
-    @BeforeMethod
-    public void setUp() {
-        bank = new Bank();
-    }
     @Test
     public void shouldFindExistingAccount() {
         assertThat(bank.findAccount(TestData.FIRST_VALID_CARD)).isNotEmpty();

@@ -1,7 +1,7 @@
-package tests.withdrawalTests;
+package tests.withdrawaltests;
 
 import base.BaseTest;
-import dataProviders.WithdrawAmountProvider;
+import dataproviders.WithdrawAmountProvider;
 import helpers.LoginHelper;
 import org.testng.annotations.Test;
 

@@ -10,7 +10,7 @@
         </groups>
 
         <packages>
-            <package name="tests.loginTests"/>
+            <package name="tests.logintests"/>
         </packages>
     </test>
 
@@ -22,7 +22,7 @@
         </groups>
 
         <packages>
-            <package name="tests.depositTests"/>
+            <package name="tests.deposittests"/>
         </packages>
     </test>
 
@@ -34,7 +34,7 @@
         </groups>
 
         <packages>
-            <package name="tests.withdrawalTests"/>
+            <package name="tests.withdrawaltests"/>
         </packages>
     </test>
 
